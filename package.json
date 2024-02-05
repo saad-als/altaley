@@ -1,0 +1,22 @@
+{
+  "name": "altaley",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saad-als/altaley.git"
+  },
+  "author": "Saad Alsayed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saad-als/altaley/issues"
+  },
+  "homepage": "https://github.com/saad-als/altaley#readme",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
