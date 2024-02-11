@@ -1,5 +1,19 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 function App() {
 
+
+  const [links, setLinks] = useState("");
+
+  useEffect(() => {
+    axios.get('/')
+      .then(response => {
+        setLinks(response.data.links);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <>
@@ -15,7 +29,7 @@ function App() {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Dark theme</a></li>
+                <li><a className="dropdown-item" href="#">المظهر الليلي</a></li>
                 <li><a className="dropdown-item" target="_blank" href="https://github.com/saad-als/altaley" rel="noreferrer">Github</a></li>
               </ul>
             </div>
@@ -25,13 +39,16 @@ function App() {
       </nav>
 
       {/* middle and main container */}
-      <div className="main-container container-fluid d-block">
+      <div className="main-container  container-fluid">
 
-        <div className="d-flex justify-content border">
-          شعار تالي كبير
+        <div className="d-flex justify-content container-md border">
+          <p> {links}</p>
         </div>
 
         <div className="showing-box">
+
+
+
 
         </div>
 
