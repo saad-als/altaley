@@ -6,7 +6,7 @@ const cors = require('cors');
 const port = 5000;
 const baseURL = 'https://youtube.googleapis.com/youtube/v3';
 const watch_url = 'https://www.youtube.com/watch?v=';
-const api_key = 'AIzaSyCQAsstFrThKkt76u602-1rThGgkU1amW0';
+const api_key = 'committed by mistake and got changed :)';
 
 app.use(cors());
 
