@@ -1,12 +1,15 @@
 function Navbar() {
     return (
         <>
-            <nav className="navbar fixed-top h-10">
+            <nav className="navbar  h-10">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">شعار تالي</a>
 
-                    <div className="d-flex ">
-                        <div className="dropend">
+                    <div className="d-flex border p-2">
+
+                        <a className="dropdown-item" target="_blank" href="https://github.com/saad-als/altaley" rel="noreferrer">Github</a>
+
+                        {/* <div className="dropend">
                             <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
@@ -14,7 +17,7 @@ function Navbar() {
                                 <li><a className="dropdown-item" href="#">المظهر الليلي</a></li>
                                 <li><a className="dropdown-item" target="_blank" href="https://github.com/saad-als/altaley" rel="noreferrer">Github</a></li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
