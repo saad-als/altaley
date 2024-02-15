@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 const express = require('express');
 const axios = require('axios');
 const app = express();
@@ -6,7 +6,7 @@ const cors = require('cors');
 const port = 5000;
 const baseURL = 'https://youtube.googleapis.com/youtube/v3';
 const watch_url = 'https://www.youtube.com/watch?v=';
-const api_key = 'committed by mistake and got changed :)';
+const api_key = process.env.API_KEY;
 
 app.use(cors());
 
@@ -51,7 +51,7 @@ async function retrieveVideos(opt1, opt2, opt3) {
     let searchedVideos = null;
     let ids = null;
     for (let i = 0; i < categoriesList.length; i++) {
-      searchedVideos = await axios.get(`${baseURL}/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=3&regionCode=SA&videoCategoryId=${categoriesList[i].id}&&key=${api_key}`);
+      searchedVideos = await axios.get(`${baseURL}/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=3&regionCode=SA&videoCategoryId=${categoriesList[i].id}&key=${api_key}`);
       ids = searchedVideos.data.items.map(id => id.id);
 
     }
@@ -61,24 +61,18 @@ async function retrieveVideos(opt1, opt2, opt3) {
   } catch (error) {
     console.error(error);
   }
-
-  
-
 }
 
 
-
-
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
  
   
-
-  res.send("everything is working correctly");
+  
+  
+  res.send("All is working fine");
   
 })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-
