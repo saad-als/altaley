@@ -66,13 +66,13 @@ async function retrieveVideos(opt1, opt2, opt3) {
 
 app.get('/', async (req, res) => {
  
+  const vids = await retrieveVideos("gaming");
   
   
-  
-  res.send("All is working fine");
+  res.json({links: vids})
   
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Altaley server is listening on port: [${port}]`)
 })
