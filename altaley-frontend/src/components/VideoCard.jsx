@@ -1,16 +1,12 @@
 function VideoCard() {
     return (
         <>
-            <div className="card mb-3 ">
-                <div className="row g-0">
-                    <div className="col-md-4">
-                        <img src="..." className="img-fluid rounded-start" alt="video thumbnail" />
-                    </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                        </div>
-                    </div>
+            <div className="card" >
+                <img src="./image.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">some text is written here to show </p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </>
