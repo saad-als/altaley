@@ -5,9 +5,9 @@ function NavBar() {
         <>
             <nav className="navbar p-3 bg-body-tertiary">
                 <div className="container-fluid">
-                    <a className="navbar-brand fs-4" href="#">
+                    <a className="navbar-brand fs-4 d-flex" href="#">
                         <img src="../assets/images/512-logo.png" alt="Logo" width="40" height="40" className="d-inline-block align-text-top" />
-
+                        <h4 className="me-2 fs-4">التالي</h4>
                     </a>
                     <div className="d-flex">
 

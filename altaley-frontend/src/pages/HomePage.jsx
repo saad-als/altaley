@@ -1,23 +1,24 @@
-import axios from 'axios';
 import NavBar from "../components/NavBar";
-import { useState, useEffect } from 'react';
+import ListOfCategories from "../components/ListOfCategories";
 function HomePage() {
 
-    const [data, setData] = useState(null)
-
-
-    const getData = async () => {
-        const data = await axios.get("http://localhost:5000");
-        setData(data)
-    };
     return (
         <>
-            <NavBar />
-            <button type="button" className="btn btn-info" onClick={getData}>ارسال</button>
+            <div className="navigation">
+                <NavBar />
+            </div>
 
 
+            <div className="d-flex ">
+
+                <ListOfCategories />
+
+                <div className="position-relative d-flex align-items-center border justify-content-center mt-4" style={{ height: '600px', width: '70%' }}>
+                    <div className="position-absolute top-0 p-4 "><p className="fs-3 text-body-secondary">اختر التصنيفات اللي تعجبك، وتالي يرشح لك فيديوهات للمشاهدة</p></div>
+                </div>
+            </div>
         </>
-    );
+    )
 }
 
 export default HomePage
