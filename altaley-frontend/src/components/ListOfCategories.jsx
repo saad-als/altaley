@@ -127,17 +127,33 @@ function ListOfCategories() {
         }
     ];
 
+
+
+    const listOfObjects = () => {
+        const showList = list.map((item) => {
+            return (
+                <li key={item.id} className="list-group-item list-group-item-action">
+                    <button type="button" className="btn btn-outline-info mt-2">{item.title}</button>
+                </li>);
+        })
+
+        return showList
+    };
+
     return (
         <>
-            <div>
-                <ul>
+            <div className=" overflow-auto mt-4 border" style={{ height: '600px', width: '20%' }}>
+                <h2 className="m-3">التصنيفات</h2>
+                <ul className="">
                     {
-                        list.forEach(item => {
-                            return <li><a href="">{`${item.title}.${item.id}`}</a></li>
-                        })
+
+                        listOfObjects()
                     }
                 </ul>
             </div>
+
+
+
 
         </>
     );
