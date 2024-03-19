@@ -1,4 +1,7 @@
+import { useState } from "react";
 function ListOfCategories() {
+
+    const [choosedList, addToList] = useState([]);
 
     const list = [
         {
@@ -128,12 +131,19 @@ function ListOfCategories() {
     ];
 
 
+    const handleClick = (e) => {
+
+        e.currentTarget.className = 'btn btn-info mt-2';
+        addToList(e.currentTarget.innerText);
+        console.log(choosedList);
+    };
+
 
     const listOfObjects = () => {
         const showList = list.map((item) => {
             return (
                 <li key={item.id} className="list-group-item list-group-item-action">
-                    <button type="button" className="btn btn-outline-info mt-2">{item.title}</button>
+                    <button type="button" className="btn btn-outline-info mt-2" onClick={handleClick}>{item.title}</button>
                 </li>);
         })
 
@@ -142,8 +152,8 @@ function ListOfCategories() {
 
     return (
         <>
-            <div className=" overflow-auto mt-4 border" style={{ height: '600px', width: '20%' }}>
-                <h2 className="m-3">التصنيفات</h2>
+            <div className=" overflow-auto mt-2 " style={{ height: '600px', width: '20%' }}>
+                <h2 className="m-3 text-light">التصنيفات</h2>
                 <ul className="">
                     {
 

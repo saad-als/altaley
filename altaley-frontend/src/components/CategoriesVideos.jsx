@@ -3,8 +3,11 @@ function CategoriesVideos() {
     return (
         <>
             <div className="videosList">
-                <h2>التصنيف</h2>
-                <div className="vidoes">
+                <h3 className="text-light text-decoration-underline">التصنيف</h3>
+                <div className="vidoes d-flex ">
+                    <Video />
+                    <Video />
+                    <Video />
                     <Video />
                 </div>
             </div>
